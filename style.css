@@ -1,0 +1,717 @@
+:root {
+    --primary-color: #FFD700;
+    --secondary-color: #2c3e50;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+/* Header Styles */
+.main-header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo h1 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+.login-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.login-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Hero Section */
+.hero-section {
+    margin-top: 0;
+    padding: 2rem 2rem;
+    background: #FFD700;
+    position: relative;
+    min-height: 60vh;
+}
+
+.hero-section::after {
+    display: none;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+/* Cards Container */
+.cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-dots {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-icon {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    opacity: 0.1;
+}
+
+.card-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Login Container */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.toggle-form {
+    text-align: center;
+    margin-top: 15px;
+    color: #555;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #3498db;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.toggle-btn:hover {
+    color: #2980b9;
+}
+
+.error-message {
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Footer Styles */
+.main-footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--primary-color);
+}
+
+/* Course Section */
+.course-section {
+    position: relative;
+    padding: 2rem 2rem;
+    background: #FFD700;
+    margin-top: -10rem;
+    padding-top: 8rem;
+}
+
+/* Update Course Journey title background */
+.course-section .title-brush {
+    background: #FFFFFF;  /* Changed from #FFD700 to white */
+    padding: 2rem 3rem;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-out;
+}
+
+.course-section .title-brush h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.tiers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tier-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.tier-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.tier-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background-color: #f8f9fa;
+}
+
+.tier-dots {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tier-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tier-card h3 {
+    color: #2c3e50;
+    margin: 2rem 0 1rem;
+    font-size: 1.3rem;
+}
+
+.tier-card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.tier-icon {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+}
+
+.tier-card:hover .tier-icon {
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(-150%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .title-brush {
+        padding: 1.5rem;
+        width: 90%;
+    }
+
+    .title-brush h1 {
+        font-size: 1.8rem;
+    }
+
+    .tier-row {
+        grid-template-columns: 1fr;
+    }
+
+    .tier-card {
+        margin: 0 1rem;
+    }
+}
+
+.training-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 8%;
+    padding-bottom: 8rem;
+    background: linear-gradient(135deg, #fff 50%, #FFD700 50%);
+    min-height: 60vh;
+    position: relative;
+    overflow: hidden;
+    gap: 4rem;
+    z-index: 1;
+}
+
+.content-left {
+    flex: 0 1 45%;
+    max-width: 600px;
+    z-index: 2;
+    position: relative;
+}
+
+.title-brush {
+    background: #FFD700;
+    padding: 2rem 3rem;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 2rem;
+    animation: slideIn 1s ease-out;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.title-brush h1 {
+    font-size: 2.2rem;
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    white-space: nowrap;
+}
+
+.description {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.talk-btn {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.skills-circle {
+    flex: 0 1 50%;
+    position: relative;
+    z-index: 1;
+}
+
+.circle {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: #FFD700;
+    border-radius: 50%;
+    animation: pulse 4s infinite;
+}
+
+.skill-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-size: 1.5rem;
+}
+
+.skill-text {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #000;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.skill-item:hover .skill-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(255, 215, 0, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+    }
+}
+
+@media (max-width: 968px) {
+    .training-section {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .content-left {
+        flex: 0 1 100%;
+        max-width: 50%;
+        text-align: center;
+    }
+
+    .circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .title-brush {
+        width: 40%;
+        padding: 1.5rem;
+    }
+
+    .title-brush h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Add at the top of the file */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Remove the circles */
+.training-section::before,
+.training-section::after {
+    display: none;
+}
+
+/* Add styles for the login section wrapper */
+#login-section {
+    position: relative;
+    background: transparent;
+}
+
+/* Add animated gif styles for both sides */
+.animated-gif-left,
+.animated-gif-right {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 50%;
+    background-image: url('assets/kiki-kiyomi.gif');  /* Updated path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1000;
+    pointer-events: none;
+    image-rendering: pixelated;
+}
+
+.animated-gif-left {
+    left: 200px;  /* Adjusted position */
+    transform: translateY(-50%) scaleX(1);  /* Face right */
+}
+
+.animated-gif-right {
+    right: 200px;  /* Adjusted position */
+    transform: translateY(-50%) scaleX(-1);  /* Face left */
+}
+
+/* Ensure iframe content stays above the gifs */
+#login-section iframe {
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    height: 500px;  /* Fixed height to match iframe */
+    margin: 0 auto;
+    display: block;
+}
+
+/* Login section wrapper */
+.login-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+/* Gif styling */
+.login-gif {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+/* Left bunny - no color filter */
+.login-gif.left {
+    /* Removed color filter */
+}
+
+/* Right bunny - only flip, no color filter */
+.login-gif.right {
+    transform: scaleX(-1);  /* Keep the flip effect */
+}
+
+/* Update iframe styling */
+#login-section {
+    max-width: 800px;
+    width: 100%;
+    height: 500px;
+    background: transparent;
+}

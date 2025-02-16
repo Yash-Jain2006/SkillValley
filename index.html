@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Skill Valley Logo" class="logo-img" style="width: 50px; height: 50px;">
+                <h1 style="font-size: 25px;">Skill Valley</h1>
+
+            </div>
+            <div class="nav-links">
+                <a href="#main-hero" class="nav-link">Home</a>
+                <a href="#course-section" class="nav-link">Courses</a>
+                <a href="price.html" class="nav-link">Pricing</a>
+                <a href="Certifications/Certification.html" class="nav-link">Certifications</a>
+                <a href="#hero-section" class="nav-link">About</a>
+                <a href="#login-section" class="login-btn">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Add some padding to account for the fixed header */
+        section {
+            scroll-margin-top: 60px;
+        }
+        
+        .skills-container {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          gap: 80px;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 40px 20px;
+        }
+      
+        .skill-circle, .methodology-circle {
+          background: #FFD700;
+          border-radius: 50%;
+          width: 250px;
+          height: 250px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+      
+        .skill-circle h3, .methodology-circle h3 {
+          font-size: 24px;
+          margin-bottom: 12px;
+          color: #2d3748;
+        }
+      
+        .skill-circle p, .methodology-circle p {
+          font-size: 16px;
+          color: #4a5568;
+          line-height: 1.5;
+        }
+      
+        .hero {
+          text-align: center;
+          padding: 50px 20px;
+          position: relative;
+          overflow: hidden;
+        }
+      
+        .hero::after {
+          content: '';
+          position: absolute;
+          background: #fff; /* Yellow background */
+          width: 200%;
+          height: 100%;
+          bottom: -50%;
+          right: -50%;
+          transform: rotate(-12deg);
+          z-index: -1;
+        }
+      
+        .hero-content {
+          margin-bottom: 80px;
+        }
+      
+        .main-title {
+          font-size: 42px;
+          font-weight: bold;
+          color: #2d3748;
+          margin-bottom: 20px;
+        }
+      
+        .highlight-text {
+          color: #3182ce;
+          position: relative;
+        }
+      
+        .highlight-text::after {
+          content: '';
+          position: relative;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 6px;
+          background: #FFD700;
+          z-index: -1;
+        }
+      
+        .hero-subtitle {
+          font-size: 18px;
+          color: #4a5568;
+          max-width: 800px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .main-header {
+            padding: 10px 0;
+            background: white;
+            box-shadow: 0 6px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo h1 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #3182ce;
+        }
+
+        .login-btn {
+            background: #3182ce;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .login-btn:hover {
+            background: #2c5282;
+        }
+
+        .certificate-section {
+            background: #f8f9fa;
+        }
+
+        .certificate-section .container {
+            max-width: 1200px;
+        }
+
+        .certificate-section .w-1-2 {
+            width: 50%;
+        }
+
+        .certificate-section .pr-8 {
+            padding-right: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .certificate-section .container {
+                flex-direction: column;
+            }
+            
+            .certificate-section .w-1-2 {
+                width: 100%;
+            }
+            
+            .certificate-section .pr-8 {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            .video-showcase {
+                padding: 2rem 1rem;
+            }
+        }
+
+        .video-container {
+            position: relative;
+            padding-top: 56.25%;
+        }
+    </style>
+      
+      <section class="hero" id="main-hero">
+        <div class="hero-content">
+          <h1 class="main-title">Bridge the Gap with 
+            <u style="color: #FFD700;"><span class="highlight-text">Gamified Learning</span></u>
+          </h1>
+          <p class="hero-subtitle">Transform into an industry-ready professional through our engaging, tier-based progression system</p>
+        </div>
+      
+        <div class="skills-container">
+          <div class="skill-circle">
+            <h3>Technical Skills</h3>
+            <p>Master Python, DSA, and Development</p>
+          </div>
+          <div class="skill-circle">
+            <h3>Communication</h3>
+            <p>Excel in professional communication</p>
+          </div>
+          <div class="skill-circle">
+            <h3>Critical Thinking</h3>
+            <p>Develop problem-solving abilities</p>
+          </div>
+        </div>
+      </section>
+   
+      <!-- Update the video showcase section -->
+<section class="video-showcase bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-800">
+            A Sneak Peek into Our World
+        </h2>
+        <div class="max-w-4xl mx-auto mt-2">
+            
+                <video 
+                    controls
+                    autoplay
+                    muted
+                    class="w-full aspect-video bg-black"
+                >
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+            
+        </div>
+    </div>
+</section>
+
+
+    <!-- Training Section -->
+    <section class="training-section">
+        <div class="content-left">
+            <div class="title-brush">
+                <h1>Here Is Our Training Agenda</h1>
+            </div>
+            <p class="description">
+                Through the usage of our Gamified Tiered system, Skill Valley seeks to grow platform users holistically.
+                In addition to being technically proficient, we at Skill Valley want our users to be effective communicators and critical thinkers.
+            </p>
+            <p class="description">
+                Prepare to advance your skills and feel secure knowing that this will be your one-stop shop for landing your ideal job!
+            </p>
+            <button class="talk-btn" onclick="contactUs()">Talk To Us</button>
+        </div>
+
+        <div class="skills-circle">
+            <div class="circle" id="skillsWheel"></div>
+        </div>
+    </section>
+
+    <section class="course-section" id="course-section">
+        <div class="title-brush">
+            <h1>Course Journey</h1>
+        </div>
+        <div class="tiers-container">
+
+            <!-- Beginner Level -->
+            <div class="tier-row max-w-6xl mx-auto gap-8 mb-8">
+                <div class="tier-card bg-white p-6 rounded-xl">
+                    <div class="tier-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <span class="tier-badge">Tier 0</span>
+                    <h3>Aptitude</h3>
+                    <p>Learn the basics of Aptitude and prepare for your dream job.</p>
+                    <div class="tier-icon">⚙️</div>
+                </div>
+
+                <div class="tier-card bg-white p-6 rounded-xl" onclick="window.location.href='python_course.html'">
+                    <div class="tier-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <span class="tier-badge">Tier 1</span>
+                    <h3>Fundamentals of Coding</h3>
+                    <p>Learn the basics of coding and prepare for your dream job.</p>
+                    <div class="tier-icon">🐍</div>
+                </div>
+
+                <div class="tier-card bg-white p-6 rounded-xl" onclick="window.location.href='Tier-2/dist/tier2.html'">
+                    <div class="tier-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <span class="tier-badge">Tier 2</span>
+                    <h3>Professional Etiquettes</h3>
+                    <p>Learn the basics of Professional Etiquettes and prepare for your dream job.</p>
+                    <div class="tier-icon">�</div>
+                </div>
+            </div>
+
+            <!-- Intermediate Level -->
+            <div class="tier-row max-w-6xl mx-auto gap-8 mb-8">
+                <div class="tier-card bg-white p-6 rounded-xl">
+                    <div class="tier-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <span class="tier-badge">Tier 3</span>
+                    <h3>Mini Projects</h3>
+                    <p>Build exciting projects to apply your Python programming skills.</p>
+                    <div class="tier-icon">🎮</div>
+                </div>
+
+                <div class="tier-card bg-white p-6 rounded-xl">
+                    <div class="tier-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <span class="tier-badge">Tier 4</span>
+                    <h3>Communication Skills</h3>
+                    <p>Develop technical writing skills and learn to present your code professionally.</p>
+                    <div class="tier-icon">📝</div>
+                </div>
+
+                <div class="tier-card bg-white p-6 rounded-xl">
+                    <div class="tier-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <span class="tier-badge">Tier 5</span>
+                    <h3>DSA</h3>
+                    <p>Master Data Structures and Algorithms for technical interviews.</p>
+                    <div class="tier-icon">🎯</div>
+                </div>
+            </div>
+
+            <!-- Advanced Level -->
+            <div class="tier-row max-w-6xl mx-auto gap-8 mb-8">
+                <div class="tier-card bg-white p-6 rounded-xl">
+                    <div class="tier-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <span class="tier-badge">Tier 6</span>
+                    <h3>Industry Projects</h3>
+                    <p>Work on real-world projects following industry standards and best practices.</p>
+                    <div class="tier-icon">🏢</div>
+                </div>
+
+                <div class="tier-card bg-white p-6 rounded-xl">
+                    <div class="tier-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <span class="tier-badge">Tier 7</span>
+                    <h3>Internship</h3>
+                    <p>Get hands-on experience through internships with our industry partners.</p>
+                    <div class="tier-icon">🚀</div>
+                </div>
+
+                <div class="tier-card bg-white p-6 rounded-xl" onclick="window.location.href='Tier-8/tier8.html'">
+                    <div class="tier-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <span class="tier-badge">Tier 8</span>
+                    <h3>Career Launcher</h3>
+                    <p>Master job search strategies and interview skills</p>
+                    <div class="tier-icon">🎯</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Skill Valley Section -->
+    <section class="hero-section" id="hero-section">
+        <h2 class="section-title">Why Skill Valley?</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <h3>Training Programs</h3>
+                <p>Interested in boosting your career in the digital sector? Sign up for our training programs today.</p>
+                
+            </div>
+
+            <div class="card">
+                <div class="card-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <h3>Resources & E-books</h3>
+                <p>The training we provide for trainees goes beyond just courses; we provide tutorials and e-books, as well.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <h3>Training Institute</h3>
+                <p>Training institute, but we're more. You'll learn business and job skills. We'll show you how the industry works.</p>
+                
+            </div>
+
+            <div class="card">
+                <div class="card-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <h3>Be a Skill Valley Trainer</h3>
+                <p>Share your knowledge if you are an industry expert. Join our Skill Valley Trainers Program.</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Section -->
+    <section class="certificate-section py-16">
+        <div class="container mx-auto px-4 flex items-center">
+            <!-- Text Content (Left Half) -->
+            <div class="w-1/2 pr-8">
+                <h2 class="certificate-section text-3xl font-bold mb-6 text-center mx-auto border-b-4 border-yellow-400 pb-2 inline-block">
+                    Certificate of Completion
+                </h2>
+                <div class="text-left text-gray-700 space-y-4">
+                    <p class="mb-4 text-xl">
+                        Our website provides professionally designed certificates to recognize your achievements and skills after the completion of the course. 
+                        </p><p class="mb-4 text-xl">Badge is awarded to the users after every level completion.
+                        </p>
+                    
+
+                    <p class="text-lg font-semibold">
+                        Earn a certificate today and take a step forward in your career! 
+                    </p>
+                </div>
+            </div>
+
+            <!-- Certificate Image (Right Half) -->
+            <div class="w-1/2">
+                <img 
+                    src="certificate.jpg" 
+                    alt="Sample Certificate" 
+                    class="w-full h-auto rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300"
+                    style="max-width: 600px;"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <div class="login-wrapper">
+        <img src="assets/gif.gif" alt="Bunny mascot" class="login-gif left">
+        <iframe 
+            src="login.html" 
+            width="100%" 
+            height="500px" 
+            frameborder="0" 
+            title="Login Form" 
+            id="login-section"
+            style="background: transparent;"
+        ></iframe>
+        <img src="assets/gif.gif" alt="Bunny mascot" class="login-gif right">
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Skill Valley</h4>
+                <p>Empowering careers through digital education</p>
+            </div>
+            <div class="footer-section">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" id="contact-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: info@skillvalley.com</li>
+                    <li>Phone: +1 234 567 890</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const skills = [
+            { name: 'Technical Skills', icon: '💻', angle: 0 },
+            { name: 'Theory Concepts', icon: '📚', angle: 72 },
+            { name: 'Soft Skills', icon: '🤝', angle: 144 },
+            { name: 'Comm. Skills', icon: '🗣️', angle: 216 },
+            { name: 'Management Skills', icon: '📊', angle: 288 }
+        ];
+
+        function positionSkills() {
+            const wheel = document.getElementById('skillsWheel');
+            wheel.innerHTML = '';
+            const radius = wheel.offsetWidth * 0.35;
+
+            skills.forEach((skill, index) => {
+                const skillElement = document.createElement('div');
+                skillElement.className = 'skill-item';
+                
+                const angleInRad = (skill.angle - 90) * (Math.PI / 180);
+                const x = Math.cos(angleInRad) * radius;
+                const y = Math.sin(angleInRad) * radius;
+
+                skillElement.style.left = `calc(50% + ${x}px - 30px)`;
+                skillElement.style.top = `calc(50% + ${y}px - 30px)`;
+
+                skillElement.innerHTML = `
+                    <div class="skill-icon">${skill.icon}</div>
+                    <span class="skill-text">${skill.name}</span>
+                `;
+
+                wheel.appendChild(skillElement);
+            });
+        }
+
+        function contactUs() {
+            const btn = document.querySelector('.talk-btn');
+            btn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                btn.style.transform = 'scale(1)';
+                alert('Thank you for your interest! Our team will contact you shortly.');
+            }, 200);
+        }
+
+        window.addEventListener('load', positionSkills);
+        window.addEventListener('resize', positionSkills);
+
+        // Login form toggle functionality
+        function toggleForm() {
+            const form = document.getElementById('loginForm');
+            const title = document.querySelector('.login-container h2');
+            const toggleText = document.querySelector('.toggle-form p');
+            const submitBtn = document.querySelector('.submit-btn');
+            const toggleBtn = document.querySelector('.toggle-btn');
+
+            if (title.textContent === 'Welcome to Skill Valley') {
+                title.textContent = 'Create Account';
+                submitBtn.textContent = 'Sign Up';
+                toggleText.textContent = 'Already have an account? ';
+                toggleBtn.textContent = 'Login';
+            } else {
+                title.textContent = 'Welcome to Skill Valley';
+                submitBtn.textContent = 'Login';
+                toggleText.textContent = "Don't have an account? ";
+                toggleBtn.textContent = 'Sign Up';
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Basic validation
+            if (!email || !password) {
+                errorMessage.textContent = 'Please fill in all fields';
+                return;
+            }
+
+            // Here you would typically make an API call to your backend
+            // For demo purposes, we'll just show a success message
+            errorMessage.textContent = '';
+            alert('Login successful!');
+        });
+    </script>
+    
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '67aaeb3ec1f7f579513cb4d7' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                });
+            }
+            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+</body>
+</html> 
+

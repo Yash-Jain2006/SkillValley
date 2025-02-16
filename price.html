@@ -1,0 +1,199 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-300">
+    <!-- Add Header -->
+    <header class="main-header bg-white shadow-lg">
+        <nav class="nav-container max-w-7xl mx-auto px-4 py-3">
+            <div class="logo">
+                <img src="logo.jpg" alt="Skill Valley Logo" class="logo-img" style="width: 50px; height: 50px;">
+                <h1 style="font-size: 25px; color: #2d3748; font-weight: 600; font-family: 'Roboto', sans-serif;">Skill Valley</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#main-hero" class="nav-link">Home</a>
+                <a href="index.html#course-section" class="nav-link">Courses</a>
+                <a href="price.html" class="nav-link">Pricing</a>
+                <a href="index.html#hero-section" class="nav-link">About</a>
+                <a href="index.html#login-section" class="login-btn">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Add header styles -->
+    <style>
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #3182ce;
+        }
+
+        .login-btn {
+            background: #3182ce;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .login-btn:hover {
+            background: #2c5282;
+        }
+    </style>
+
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-extrabold text-gray-900">Pricing Plans</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Personal Plan -->
+            <div class="bg-white shadow-lg rounded-lg border border-gray-200">
+                <div class="bg-[#FFF] rounded-t-lg p-4">
+                    <h3 class="text-lg font-semibold text-black">Basic Plan</h3>
+                </div>
+                <div class="p-6" >
+                    <p class="text-2xl font-bold text-gray-900 mb-2">₹49/Quarter</p>
+                    <button class="w-full bg-[#FFD700] text-black py-2 rounded-lg font-semibold hover:bg-[#FFD760] transition duration-300">
+                        Start subscription <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Certification prep
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Goal-focused recommendations
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            AI-powered coding exercises
+                        </li>
+                    </ul>   
+                </div>
+            </div>
+            <!-- Team Plan -->
+            <div class="bg-white shadow-lg rounded-lg border border-gray-200">
+                <div class="bg-[#FFF] rounded-t-lg p-4">
+                    <h3 class="text-lg font-semibold text-black">Standard Plan</h3>
+                </div>
+                <div class="p-6">
+                    
+                    <p class="text-2xl font-bold text-gray-900 mb-2">₹149/Half Year</p>
+                    <button class="w-full bg-[#FFD700] text-black py-2 rounded-lg font-semibold hover:bg-[#FFD760] transition duration-300">
+                        Start subscription <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Certification prep
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Goal-focused recommendations
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            AI-powered coding exercises
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Analytics and adoption reports
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Enterprise Plan -->
+            <div class="bg-white shadow-lg rounded-lg border border-gray-200">
+                <div class="bg-[#FFF] rounded-t-lg p-4">
+                    <h3 class="text-lg font-semibold text-black">Yearly Plan</h3>
+                </div>
+                <div class="p-6">
+                    <p class="text-2xl font-bold text-gray-900 mb-2">₹239/Year</p>
+                    <button class="w-full bg-[#FFD700] text-black py-2 rounded-lg font-semibold hover:bg-[#FFD760] transition duration-300">
+                        Start subscription <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Certification prep
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Goal-focused recommendations
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            AI-powered coding exercises
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Advanced analytics and insights
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Customizable content
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Hands-on tech training with add-on
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add AI Chatbot -->
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '67aaeb3ec1f7f579513cb4d7' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                });
+            }
+            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+            v.type = "text/javascript"; 
+            s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+</body>
+</html>
