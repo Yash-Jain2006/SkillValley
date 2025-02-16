@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Etiquettes | Skill Valley</title>
+    <link rel="stylesheet" href="./tier2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Update the navigation links with correct section IDs -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="../../index.html#training-section" class="nav-link">Training Agenda</a>
+            <a href="../../index.html#hero-section" class="nav-link">Why Skill Valley</a>
+            <a href="../../python_course.html" class="nav-link">Python Course</a>
+            <a href="../../index.html" class="nav-link">Home</a>
+        </div>
+    </nav>
+
+    <section class="etiquettes-section">
+        <div class="title-container">
+            <div class="title-brush">
+                <h1>Professional Etiquettes</h1>
+                <span class="tier-badge">Tier 2</span>
+            </div>
+            <p class="subtitle">Master the art of professional conduct and workplace excellence</p>
+        </div>
+
+        <div class="etiquettes-grid">
+            <!-- Communication Module -->
+            <div class="etiquette-card" data-category="communication">
+                <div class="card-header">
+                    <span class="category-tag">Communication</span>
+                    <div class="progress-circle" data-progress="0">
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+                <h3>Email & Communication</h3>
+                <ul class="checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="email1">
+                        <label for="email1">Professional Email Writing</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="email2">
+                        <label for="email2">Meeting Communication</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="email3">
+                        <label for="email3">Client Interaction</label>
+                    </li>
+                </ul>
+                <div class="card-footer">
+                    <button class="learn-more-btn" onclick="openLearningModule('email')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Workplace Behavior Module -->
+            <div class="etiquette-card" data-category="workplace">
+                <div class="card-header">
+                    <span class="category-tag">Workplace</span>
+                    <div class="progress-circle" data-progress="0">
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+                <h3>Workplace Behavior</h3>
+                <ul class="checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="workplace1">
+                        <label for="workplace1">Office Conduct</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="workplace2">
+                        <label for="workplace2">Team Collaboration</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="workplace3">
+                        <label for="workplace3">Time Management</label>
+                    </li>
+                </ul>
+                <div class="card-footer">
+                    <button class="learn-more-btn" onclick="openLearningModule('workplace')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Virtual Etiquette Module -->
+            <div class="etiquette-card" data-category="virtual">
+                <div class="card-header">
+                    <span class="category-tag">Virtual</span>
+                    <div class="progress-circle" data-progress="0">
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+                <h3>Virtual Etiquettes</h3>
+                <ul class="checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="virtual1">
+                        <label for="virtual1">Video Call Etiquette</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="virtual2">
+                        <label for="virtual2">Online Meeting Best Practices</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="virtual3">
+                        <label for="virtual3">Digital Communication Tools</label>
+                    </li>
+                </ul>
+                <div class="card-footer">
+                    <button class="learn-more-btn" onclick="openLearningModule('virtual')">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="learning-modal" id="learningModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <h2 id="modalTitle">Learning Module</h2>
+                    <div class="progress-bar">
+                        <div class="progress" id="moduleProgress"></div>
+                    </div>
+                </div>
+                
+                <div class="learning-content" id="learningContent">
+                    <!-- Content will be dynamically loaded -->
+                </div>
+
+                <div class="modal-footer">
+                    <button class="nav-btn prev-btn" id="prevBtn">Previous</button>
+                    <button class="nav-btn next-btn" id="nextBtn">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievement-banner" id="achievementBanner">
+            <div class="achievement-content">
+                <span class="achievement-icon">🏆</span>
+                <p class="achievement-text">Achievement Unlocked!</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="Agenda.js"></script>
+    <script src="ProfessionalEtiquettes.js"></script>
+    <script src="./tier2.js"></script>
+</body>
+</html>
