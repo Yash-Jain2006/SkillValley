@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Customization</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            height: 100vh;
+            margin-top: 100px;
+            min-height: calc(100vh - 200px);
+        }
+
+        .preview-section {
+            grid-column: 1;
+            grid-row: 1;
+            background: url('Game/assets/background.gif') center/cover;
+            border: 2px solid #444;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .character-preview {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+        }
+
+        .accessories-section {
+            grid-column: 2;
+            grid-row: 1;
+            background-color: #2a2a2a;
+            border: 2px solid #444;
+            border-radius: 10px;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .gear-section {
+            grid-column: 1 / span 2;
+            grid-row: 2;
+            background-color: #2a2a2a;
+            border: 2px solid #444;
+            border-radius: 10px;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .item-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+        }
+
+        .item {
+            background-color: #333;
+            border: 1px solid #555;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+            background-color: #444;
+        }
+
+        .item img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 5px;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background: #000000;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo h1 {
+            font-size: 25px;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #FFD700;
+        }
+
+        .login-btn {
+            background: #3182ce;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .login-btn:hover {
+            background: #2c5282;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="../logo.jpg" alt="Skill Valley Logo" class="logo-img" style="width: 50px; height: 50px;">
+                <h1>Skill Valley</h1>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../python_course.html" class="nav-link">Course</a>
+                <a href="../video.html" class="nav-link">Tutorial</a>
+                <a href="../index.html#hero-section" class="nav-link">About</a>
+                <a href="../index.html#login-section" class="login-btn">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <img src="Images/one-piece-pixel.gif" alt="Character" class="character-preview">
+        </div>
+
+        <!-- Accessories Section -->
+        <div class="accessories-section">
+            <h2 class="section-title">character</h2>
+            <div class="item-grid">
+                <div class="item">
+                    <img src="Images/asce.gif" alt="Accessory 1">
+                    <p>ASCE</p>
+                </div>
+                
+                </div>
+                <!-- Add more accessories as needed -->
+            </div>
+        </div>
+
+        <!-- Gear Section -->
+        <div class="gear-section">
+            <h2 class="section-title">Gear</h2>
+            <div class="item-grid">
+                <div class="item">
+                    <img src="Game/assets/gear1.png" alt="Gear 1">
+                    <p>Sword</p>
+                </div>
+                <div class="item">
+                    <img src="Game/assets/gear2.png" alt="Gear 2">
+                    <p>Shield</p>
+                </div>
+                <div class="item">
+                    <img src="Game/assets/gear3.png" alt="Gear 3">
+                    <p>Armor</p>
+                </div>
+                <!-- Add more gear items as needed -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Skill Valley. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,698 @@
+:root {
+    --dark-purple: #1a1040;
+    --light-purple: #4a2b8c;
+    --neon-blue: #00f3ff;
+    --deep-blue: #0b1933;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-purple);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: calc(100vw - 60px);
+    height: calc(100vh - 60px);
+    position: relative;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 55% 45%;
+    gap: 2px;
+    background: linear-gradient(45deg, var(--deep-blue), var(--dark-purple));
+    margin-left: 60px;
+    margin-top: 60px;
+}
+
+.section {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5); /* Dark background for all sections */
+    border: 1px solid rgba(0, 243, 255, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+/* Make bottom-right section transparent */
+.section-4 {
+    display: none;
+}
+
+/* Remove hover effect */
+.section:hover {
+    background: rgba(74, 43, 140, 0.1); /* Same as non-hover state */
+    border-color: rgba(0, 243, 255, 0.1); /* Same as non-hover state */
+    box-shadow: none;
+}
+
+/* Update horizontal line to only span the right section */
+.horizontal {
+    width: 60%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0; /* Align to right edge */
+    left: auto; /* Remove default left alignment */
+    display: block;
+}
+
+.vertical {
+    width: 2px;
+    height: 100%;
+    left: 40%;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, 
+        transparent,
+        rgba(0, 243, 255, 0.5),
+        transparent
+    );
+}
+
+/* Grid background */
+.container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(var(--neon-blue) 1px, transparent 1px),
+        linear-gradient(90deg, var(--neon-blue) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Particle effect */
+.particle-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+        circle at center,
+        var(--neon-blue) 1px,
+        transparent 1px
+    );
+    background-size: 50px 50px;
+    animation: particleFloat 20s linear infinite;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+@keyframes particleFloat {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+/* Smooth gradient overlays for sections */
+.section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 243, 255, 0.05) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+/* Header Styles */
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(74, 43, 140, 0.2);
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+    z-index: 101;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.menu-btn {
+    margin-right: 20px;
+    color: #00ff00; /* Terminal text color */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.header-item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--neon-blue);
+    font-size: 20px;
+    transition: all 0.3s ease;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.header-item:hover {
+    background: rgba(0, 243, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+/* Modified Side Nav */
+.side-nav {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    height: calc(100vh - 60px);
+    transform: translateX(-100%);
+    width: 200px;
+    background: rgba(0, 0, 0, 0.95);
+    border-right: 1px solid rgba(0, 243, 255, 0.2);
+    padding: 20px;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.side-nav.active {
+    transform: translateX(0);
+}
+
+.nav-item {
+    width: 100%;
+    height: 60px;
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 220, 46, 0.1); /* Changed to FFDC2E with transparency */
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    padding: 0 15px;
+    position: relative;
+}
+
+.nav-item:hover {
+    background: rgba(255, 220, 46, 0.2); /* Slightly more opaque on hover */
+    box-shadow: 0 0 15px rgba(255, 220, 46, 0.3);
+    transform: translateX(5px);
+    color: #FFDC2E; /* Text color changes to match background on hover */
+    text-shadow: 0 0 5px rgba(255, 220, 46, 0.5);
+}
+
+/* Add styles for the corner image */
+.corner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will make the image cover the section while maintaining aspect ratio */
+    opacity: 0.8; /* Slightly transparent to blend with the background */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Adjust section-1 to properly contain the image */
+.section-1 {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Add container for characters */
+.character-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    gap: 30px;  /* Space between characters */
+    align-items: flex-end;
+}
+
+/* Update overlay image styles */
+.overlay-image {
+    height: 120px;
+    width: auto;
+    image-rendering: pixelated;
+}
+
+/* Style for Sans */
+.overlay-image:first-child {
+    filter: drop-shadow(0 0 10px rgba(0, 0, 255, 0.3));
+    transform: scaleX(-1);  /* Flip Sans horizontally */
+}
+
+/* Style for One Piece character */
+.second-character {
+    height: 120px;
+    filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.3));
+    transform: scaleX(-1);  /* Flip One Piece character horizontally */
+}
+
+/* Ensure the background GIF stays behind */
+.corner-image {
+    z-index: 1;
+}
+
+/* Terminal styles */
+.terminal {
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 8px;
+    width: 95%;
+    height: 95%;
+    margin: 10px auto;
+    overflow: hidden;
+    font-family: monospace;
+}
+
+.terminal-header {
+    background: rgba(74, 43, 140, 0.3);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-button.red { background: #ff5f56; }
+.terminal-button.yellow { background: #ffbd2e; }
+.terminal-button.green { background: #27c93f; }
+
+.terminal-title {
+    color: var(--neon-blue);
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.terminal-body {
+    display: flex;
+    padding: 0;
+    position: relative;
+    height: calc(100% - 40px); /* Subtract header height */
+}
+
+/* Update line numbers styling */
+.line-numbers {
+    padding: 15px 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(0, 243, 255, 0.2);
+    color: #666;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: right;
+    min-width: 40px; /* Reduced since we don't need space for >>> */
+    font-family: monospace;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.line-number {
+    height: 21px;
+    line-height: 21px;
+    padding-right: 5px;
+    width: 100%;
+    text-align: right;
+    color: #00ff00; /* Match the input text color */
+}
+
+/* Remove the separate prompt div since we'll include it in line numbers */
+.prompt {
+    display: none;
+}
+
+/* Update terminal input styling */
+.terminal-input {
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 14px;
+    outline: none;
+    flex: 1;
+    resize: vertical; /* Allow vertical resizing */
+    padding: 0;
+    margin: 0;
+    line-height: 21px;
+    min-height: 21px;
+    overflow-y: auto; /* Change from hidden to auto */
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    position: relative;
+    width: 100%;
+}
+
+/* Update terminal input container */
+.terminal-input-container {
+    display: flex;
+    padding: 0;
+    align-items: flex-start;
+    order: -1;
+    width: 100%;
+    position: relative;
+    min-height: 21px;
+    height: auto; /* Allow container to grow */
+}
+
+/* Update terminal content to handle scrolling better */
+.terminal-content {
+    flex: 1;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: calc(100% - 20px);
+    height: 100%;
+}
+
+.terminal-output {
+    color: #fff;
+    white-space: pre;
+    margin-top: 0;
+    flex-grow: 0;
+    line-height: 21px;
+    padding-left: 5px;
+}
+
+.current-line {
+    display: inline-block;
+    min-width: 1px;
+}
+
+.typing {
+    color: #00ff00;
+}
+
+.cursor {
+    color: #fff;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Output Terminal Styles - Cyberpunk Theme */
+.output-terminal {
+    background: rgba(0, 0, 0, 0.95);
+    box-shadow: none; /* Remove glow */
+    border: 1px solid rgba(255, 0, 60, 0.3);
+}
+
+.output-terminal .terminal-header {
+    background: rgba(255, 0, 60, 0.15);
+    border-bottom: 1px solid rgba(255, 0, 60, 0.3);
+}
+
+.output-terminal .terminal-title {
+    color: #ff003c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.output-body {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    font-family: 'Courier New', monospace;
+    color: #ff003c;
+    overflow-y: auto;
+    max-height: calc(100% - 40px);
+}
+
+.output-prompt {
+    color: #ff003c;
+    font-weight: bold;
+}
+
+.command-text {
+    color: #ff003c;
+    opacity: 0.8;
+}
+
+.output-result {
+    color: #ff003c;
+    display: block;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Remove all glowing and animation effects */
+.output-terminal::before,
+.output-terminal::after {
+    display: none;
+}
+
+/* Add styles for execute button */
+.execute-btn {
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.execute-btn:hover {
+    background: rgba(0, 243, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+.error-text {
+    color: #ff5f56;
+    font-weight: bold;
+    display: block;
+    padding: 5px 0;
+    font-family: 'Courier New', monospace;
+}
+
+/* Terminal styles for section-3 */
+.section-3 {
+    grid-column: 1;
+    grid-row: 2;
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.section-3 .output-terminal {
+    width: 95%;
+    height: 95%;
+    margin: 10px;
+}
+
+/* Update section-2 to span full height */
+.section-2 {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    position: relative; /* Add this to ensure proper line positioning */
+}
+
+/* Cyberpunk scrollbar styling */
+.terminal-content::-webkit-scrollbar,
+.output-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-content::-webkit-scrollbar-track,
+.output-body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 243, 255, 0.3);
+    border-radius: 4px;
+    border: 1px solid rgba(0, 243, 255, 0.5);
+}
+
+.terminal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 243, 255, 0.5);
+}
+
+.output-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 60, 0.3);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 0, 60, 0.5);
+}
+
+.output-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 0, 60, 0.5);
+}
+
+/* Update terminal output styles */
+.terminal-output {
+    padding: 2px 0 0 2px; /* Minimal padding */
+    margin: 0;
+    line-height: 1;
+}
+
+/* Add tooltip styles */
+.tooltip {
+    position: absolute;
+    left: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #00ff00;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Show tooltip on hover */
+.nav-item:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    left: 110%;
+}
+
+/* Add arrow to tooltip */
+.tooltip::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px 6px 6px 0;
+    border-style: solid;
+    border-color: transparent rgba(0, 255, 0, 0.3) transparent transparent;
+}
+
+/* Add styles for task counter */
+#tasksComplete {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+/* Update the last nav-item to look more like a status display */
+.nav-item:last-child {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+/* Add styles for mission text */
+.mission-text {
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+/* Add styles for level up overlay */
+.level-up-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+    z-index: 10;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* Add blur overlay for background */
+.blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 9;  /* Below level-up-overlay but above other elements */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Add styles for hearts */
+.hearts-container {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    z-index: 3;
+}
+
+.enemy-hearts {
+    top: 20px;
+    left: 20px;
+}
+
+.hero-hearts {
+    top: 20px;
+    right: 20px;
+}
+
+.heart {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.heart.lost {
+    opacity: 0.2;
+}

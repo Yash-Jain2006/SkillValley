@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Valley - Print Version</title>
+    <link rel="stylesheet" href="P_print.css">
+</head>
+<body>
+    <!-- Header with 4 buttons -->
+    <header class="top-header">
+        <div class="header-item menu-btn">☰</div>
+        <div class="mission-text">To defeat the enemy, clear all the objectives</div>
+        <div class="header-item back-btn" onclick="history.back()">←</div>
+        <div class="header-item home-btn" onclick="window.location.href='../index.html'">⌂</div>
+        <a href="avtar.html" class="header-item" title="Customize Avatar">◉</a>
+        <a href="../Certifications/Certification.html" class="header-item" title="Get Certified">📜</a>
+    </header>
+
+    <!-- Side Navigation (hidden by default) -->
+    <nav class="side-nav">
+        <div class="nav-item">
+            Objective 1
+            <div class="tooltip">Print "Hello World" using print() function</div>
+        </div>
+        <div class="nav-item">
+            Objective 2
+            <div class="tooltip">Create a variable 'x', assign a value and print it</div>
+        </div>
+        <div class="nav-item">
+            Objective 3
+            <div class="tooltip">Add 20 and 30 </div>
+        </div>
+        <div class="nav-item">
+            Tasks Complete
+            <div class="tooltip">Completed: <span id="tasksComplete">0</span>/3</div>
+        </div>
+    </nav>
+
+    <!-- Main Container with 4 Sections -->
+    <div class="container">
+        <div class="section section-1">
+            <img src="Images/Background_1.gif" alt="Upper Left Image" class="corner-image">
+            <div class="hearts-container enemy-hearts">
+                <img src="Images/Heart.png" alt="Heart" class="heart">
+                <img src="Images/Heart.png" alt="Heart" class="heart">
+                <img src="Images/Heart.png" alt="Heart" class="heart">
+            </div>
+            <div class="character-container">
+                <img src="Images/sans-undertale.gif" alt="Sans" class="overlay-image">
+                <img src="Images/one-piece-pixel.gif" alt="One Piece" class="overlay-image second-character">
+            </div>
+            <div class="hearts-container hero-hearts">
+                <img src="Images/Heart.png" alt="Heart" class="heart">
+                <img src="Images/Heart.png" alt="Heart" class="heart">
+                <img src="Images/Heart.png" alt="Heart" class="heart">
+            </div>
+        </div>
+        <div class="section section-2">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-button red"></span>
+                        <span class="terminal-button yellow"></span>
+                        <span class="terminal-button green"></span>
+                    </div>
+                    <div class="terminal-title">Python Terminal</div>
+                    <button class="execute-btn" aria-label="Execute code">▶</button>
+                </div>
+                <div class="terminal-body">
+                    <div class="line-numbers">
+                        <!-- Line numbers will be added when code is entered -->
+                    </div>
+                    <div class="terminal-content">
+                        <div class="terminal-input-container">
+                            <textarea 
+                                id="terminal-input" 
+                                class="terminal-input" 
+                                aria-label="Python command input"
+                                spellcheck="false"
+                                autofocus></textarea>
+                        </div>
+                        <div id="terminal-output" class="terminal-output">
+                            <!-- Removed Python 3.9.0 (default) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-3">
+            <div class="terminal output-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-button red"></span>
+                        <span class="terminal-button yellow"></span>
+                        <span class="terminal-button green"></span>
+                    </div>
+                    <div class="terminal-title">Output Console</div>
+                </div>
+                <div class="terminal-body output-body">
+                    <div class="terminal-output">
+                        <!-- Empty output area, ready for new content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Restore both center lines -->
+        <div class="center-line horizontal"></div>
+        <div class="center-line vertical"></div>
+    </div>
+
+    <script src="P_print.js"></script>
+
+     <script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '67b03715d7ad2f8adf961ac4' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+</body>
+</html>
+
+    
