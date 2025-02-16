@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Launcher | Skill Valley</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tier8.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Remove the existing header and nav -->
+<nav class="main-nav">
+    <div class="nav-content">
+        <a href="../../index.html#training-section" class="nav-link">Training Agenda</a>
+        <a href="../../index.html#hero-section" class="nav-link">Why Skill Valley</a>
+        <a href="../../python_course.html" class="nav-link">Python Course</a>
+        <a href="../../index.html" class="nav-link">Home</a>
+    </div>
+</nav>
+
+<style>
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #FFD700;
+        z-index: 1000;
+        padding: 1rem 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        padding: 0 1rem;
+    }
+
+    .nav-link {
+        color: #2d3748;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+        color: #1a202c;
+    }
+
+    /* Adjust main content margin */
+    .career-section {
+        margin-top: 5rem;
+    }
+
+    @media (max-width: 768px) {
+        .nav-content {
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+    <section class="career-section">
+        <div class="title-container">
+            <div class="title-brush">
+                <h1>Career Launcher</h1>
+                <span class="tier-badge">Tier 8</span>
+            </div>
+            <p class="subtitle">Your final step towards landing your dream job</p>
+        </div>
+
+        <div class="tools-grid">
+            <!-- Resume Builder -->
+            <div class="tool-card" data-tool="resume">
+                <div class="card-header">
+                    <span class="tool-icon">📝</span>
+                    <h3>Resume Builder</h3>
+                </div>
+                <div class="tool-content">
+                    <p>Create an ATS-friendly resume that stands out</p>
+                    <ul class="feature-list">
+                        <li>Professional templates</li>
+                        <li>ATS optimization</li>
+                        <li>Skills highlighting</li>
+                        <li>Achievement formatting</li>
+                    </ul>
+                    <button class="action-btn" onclick="openTool('resume')">
+                        Build Resume
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interview Prep -->
+            <div class="tool-card" data-tool="interview">
+                <div class="card-header">
+                    <span class="tool-icon">🎯</span>
+                    <h3>Interview Preparation</h3>
+                </div>
+                <div class="tool-content">
+                    <p>Practice with AI-powered mock interviews</p>
+                    <ul class="feature-list">
+                        <li>Technical questions</li>
+                        <li>Behavioral scenarios</li>
+                        <li>Real-time feedback</li>
+                        <li>Performance analytics</li>
+                    </ul>
+                    <button class="action-btn" onclick="openTool('interview')">
+                        Start Practice
+                    </button>
+                </div>
+            </div>
+
+            <!-- Job Search Strategy -->
+            <div class="tool-card" data-tool="strategy">
+                <div class="card-header">
+                    <span class="tool-icon">🎮</span>
+                    <h3>Job Search Strategy</h3>
+                </div>
+                <div class="tool-content">
+                    <p>Master the art of job hunting</p>
+                    <ul class="feature-list">
+                        <li>Company research</li>
+                        <li>Application tracking</li>
+                        <li>Networking tips</li>
+                        <li>Salary negotiation</li>
+                    </ul>
+                    <button class="action-btn" onclick="openTool('strategy')">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tool Modal -->
+        <div class="tool-modal" id="toolModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="progress-tracker">
+            <h3>Your Career Launch Progress</h3>
+            <div class="progress-bars">
+                <div class="progress-item">
+                    <span class="progress-label">Resume</span>
+                    <div class="progress-bar">
+                        <div class="progress" id="resumeProgress" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-label">Interview Prep</span>
+                    <div class="progress-bar">
+                        <div class="progress" id="interviewProgress" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-label">Job Strategy</span>
+                    <div class="progress-bar">
+                        <div class="progress" id="strategyProgress" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="tier8.js"></script>
+</body>
+</html>
