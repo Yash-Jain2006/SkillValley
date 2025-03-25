@@ -45,6 +45,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+    animation: fadeIn 1.5s ease forwards;   
 }
 
 .logo-img {
@@ -90,6 +91,252 @@ body {
 
 .login-btn:hover {
     background-color: #2980b9;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add some padding to account for the fixed header */
+section {
+    scroll-margin-top: 60px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.skill-circle, .methodology-circle {
+  background: #FFD700;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skill-circle h3, .methodology-circle h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #2d3748;
+}
+
+.skill-circle p, .methodology-circle p {
+  font-size: 16px;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  background: #fff; /* Yellow background */
+  width: 200%;
+  height: 100%;
+  bottom: -50%;
+  right: -50%;
+  transform: rotate(-12deg);
+  z-index: -1;
+}
+
+.hero-content {
+  margin-bottom: 80px;
+}
+
+.main-title {
+  font-size: 42px;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 20px;
+}
+
+.highlight-text {
+  color: #3182ce;
+  position: relative;
+}
+
+.highlight-text::after {
+  content: '';
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #FFD700;
+  z-index: -1;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #4a5568;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.main-header {
+    padding: 10px 0;
+    background: white;
+    box-shadow: 0 6px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    flex-wrap: wrap;
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #1f2937;
+     text-shadow:  
+     1px 1px 0 #ccc,
+     2px 2px 0 #bbb,
+     3px 3px 0 #aaa;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.logo img, .logo h1 {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* RESPONSIVE - Adjust for smaller screens */
+@media (max-width: 600px) {
+    .logo {
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .logo img {
+      width: 40px;
+    }
+  
+    .logo span {
+      font-size: 22px;
+    }
+  }
+
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link {
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #3182ce;
+}
+
+.login-btn {
+    background: #3182ce;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+    background: #2c5282;
+}
+
+.certificate-section {
+    background: #f8f9fa;
+}
+
+.certificate-section .container {
+    max-width: 1200px;
+}
+
+.certificate-section .w-1-2 {
+    width: 50%;
+}
+
+.certificate-section .pr-8 {
+    padding-right: 2rem;
+}
+
+@media (max-width: 768px) {
+    .certificate-section .container {
+        flex-direction: column;
+    }
+    
+    .certificate-section .w-1-2 {
+        width: 100%;
+    }
+    
+    .certificate-section .pr-8 {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+    
+    .video-showcase {
+        padding: 2rem 1rem;
+    }
+}
+
+.video-container {
+    position: relative;
+    padding-top: 56.25%;
 }
 
 /* Hero Section */
